@@ -98,6 +98,8 @@ def insertGoalieStats(db, id, team, oppteam, goaliestats, fields):
     valuesStr = ''
     count = 1
     for field in fields:
+        if (goaliestats[field] == ''):
+            goaliestats[field] = 0
         if (field == 'time_on_ice' or field == 'player' or field == 'decision'):
             valuesStr = valuesStr + '\'' + insertReplace(str(goaliestats[field])) + '\'' + ','
         else:

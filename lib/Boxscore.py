@@ -100,7 +100,7 @@ class Boxscore(object):
             for field in goalieFields:
                 if (field == 'player'):
                     goalie[field] = tr.xpath('td[@data-stat="player"][1]/a[1]')[0].text.strip()
-                elif (field == 'decision'):
+                elif (field == 'decision' or field == 'save_pct'):
                     if (tr.xpath('td[@data-stat="'+field+'"]')[0].text == None):
                         goalie[field] = ''
                     else:
